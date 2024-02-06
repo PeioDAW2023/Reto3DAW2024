@@ -26,7 +26,7 @@ public class PanelBienvenida extends JPanel{
      
         
         
-        JLabel lblBienvenido = new JLabel("CINE SEVENTH");
+        JLabel lblBienvenido = new JLabel("CINES SEVENTH");
         lblBienvenido.setBackground(Color.WHITE);
         lblBienvenido.setForeground(Color.BLUE);
         lblBienvenido.setFont(new Font("Bell MT", Font.ITALIC, 60));

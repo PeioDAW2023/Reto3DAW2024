@@ -1,10 +1,11 @@
 package paneles;
 
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 import vista.VistaPrincipal;
 
@@ -18,14 +19,13 @@ public class PanelPeliculas extends JPanel{
 	public PanelPeliculas (VistaPrincipal vp) {
 		
 		setSize(vp.getSize());
-		vp.setIconImage(Toolkit.getDefaultToolkit().getImage(VistaPrincipal.class.getResource("/multimedia/seventh.jpg")));
 		setLayout(null);
 		
 		JButton btnResumen = new JButton("Resumen");
 		btnResumen.setBackground(UIManager.getColor("Button.background"));
 		btnResumen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vp.cambiarPanel(4);
+				vp.cambiarPanel(5);
 			}
 
 		});

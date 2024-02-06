@@ -1,6 +1,5 @@
 package paneles;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -39,22 +38,22 @@ public class PanelLogin extends JPanel {
 		JLabel lblCineElorrieta = new JLabel("Iniciar Sesion");
 		lblCineElorrieta.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCineElorrieta.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 45));
-		lblCineElorrieta.setBounds(10, 122, 780, 73);
+		lblCineElorrieta.setBounds(10, 120, 780, 75);
 		add(lblCineElorrieta);
 
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Calisto MT", Font.PLAIN, 25));
-		lblUsuario.setBounds(222, 272, 175, 30);
+		lblUsuario.setBounds(220, 250, 175, 30);
 		add(lblUsuario);
 
 		txtUsuario  = new JTextField();
-		txtUsuario.setBounds(397, 273, 175, 30);
+		txtUsuario.setBounds(395, 250, 175, 30);
 		add(txtUsuario);
 		txtUsuario.setColumns(10);
 
 		JLabel lblcontraseña = new JLabel("Contraseña:");
 		lblcontraseña.setFont(new Font("Calisto MT", Font.PLAIN, 25));
-		lblcontraseña.setBounds(222, 324, 175, 30);
+		lblcontraseña.setBounds(220, 310, 175, 30);
 		add(lblcontraseña);
 
 		txtContraseña = new JPasswordField();
@@ -67,11 +66,9 @@ public class PanelLogin extends JPanel {
 			}
 		}
 		public void keyReleased(KeyEvent e) {}
-	});
-		
-	
+	});	
 		txtContraseña.setColumns(10);
-		txtContraseña.setBounds(397, 325, 175, 30);
+		txtContraseña.setBounds(395, 310, 175, 30);
 		add(txtContraseña);
 
 		
@@ -84,28 +81,32 @@ public class PanelLogin extends JPanel {
 			}
 
 		});
-		btnContinuar.setBounds(482, 402, 90, 23);
+		btnContinuar.setBounds(480, 410, 90, 25);
 		add(btnContinuar);
 		
-		JButton btnRegistro = new JButton("Registrarse");
+		JLabel lblRegistro = new JLabel("¿No tienes una cuenta?");
+		lblRegistro.setFont(new Font("Calisto MT", Font.PLAIN, 13));
+		lblRegistro.setBounds(220, 385, 200, 25);
+		add(lblRegistro);
+		
+		
+		JButton btnRegistro = new JButton("Registrate");
 		btnRegistro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vp.cambiarPanel(2);
 			}
 
 		});
-		btnRegistro.setBounds(357, 402, 105, 23);
+		btnRegistro.setBounds(220, 410, 120, 25);
 		add(btnRegistro);
 		
 		JLabel lblIcono1 = new JLabel();
-		lblIcono1.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rollocine.png")));
+		lblIcono1.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rolloCinePelis1.png")));
 		lblIcono1.setBounds(0, 0, 145, 600);
 		add(lblIcono1);
 		
 		JLabel lblIcono2 = new JLabel();
-		lblIcono2.setBackground(new Color(128, 0, 0));
-		lblIcono2.setForeground(new Color(128, 0, 0));
-		lblIcono2.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rollocine.png")));
+		lblIcono2.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rolloCinePelis2.png")));
 		lblIcono2.setBounds(647, 0, 175, 600);
 		add(lblIcono2);
 		
