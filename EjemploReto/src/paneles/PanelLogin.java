@@ -73,12 +73,13 @@ public class PanelLogin extends JPanel {
 
 		
 
-		btnContinuar = new JButton();
+		btnContinuar = new JButton("Siguiente");
 		btnContinuar.setBackground(UIManager.getColor("Button.background"));
-		btnContinuar.setFocusPainted(false);
-		btnContinuar.setBorderPainted(false);
-		btnContinuar.setContentAreaFilled(false);
-		btnContinuar.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/continuar.png")));
+//		btnContinuar.setFocusPainted(false);
+//		btnContinuar.setBorderPainted(false);
+//		btnContinuar.setContentAreaFilled(false);
+//		btnContinuar.setBackground(Color.black);
+//		btnContinuar.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/continuar.png")));
 		btnContinuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				login(vp);

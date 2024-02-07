@@ -18,7 +18,7 @@ public class PanelResumen extends JPanel{
 		setSize(vp.getSize());
 		setLayout(null);
 		
-		JLabel lblCineElorrieta = new JLabel("Crear Cuenta");
+		JLabel lblCineElorrieta = new JLabel("Registro de Compras");
 		lblCineElorrieta.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCineElorrieta.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 45));
 		lblCineElorrieta.setBounds(10, 122, 780, 73);

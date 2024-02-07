@@ -5,42 +5,36 @@ import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 
 import vista.VistaPrincipal;
 
-public class PanelBienvenida extends JPanel{
+public class PanelBienvenida extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
-
 
 	public PanelBienvenida(VistaPrincipal vp) {
-        
+
 		setSize(vp.getSize());
 		setLayout(null);
-		
+
 		setBackground(Color.GRAY);
-		
-     
-        JLabel lblFondoCine = new JLabel("");
-        lblFondoCine.setBounds(0, 0, 800, 600);
-        //lblFondoCine.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/cine.jpg")));
-       
-        add(lblFondoCine);
-        
-        JLabel lblBienvenido = new JLabel("CINES SEVENTH");
-        lblBienvenido.setBackground(Color.WHITE);
-        lblBienvenido.setForeground(Color.BLUE);
-        lblBienvenido.setFont(new Font("Bell MT", Font.ITALIC, 60));
-        lblBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
-        lblBienvenido.setBounds(115, 110, 545, 205);
-        add(lblBienvenido);
-        
+
+		JLabel lblFondoCine = new JLabel("");
+		lblFondoCine.setBounds(0, 0, 800, 600);
+
+		add(lblFondoCine);
+
+		JLabel lblBienvenido = new JLabel("CINES SEVENTH");
+		lblBienvenido.setBackground(Color.WHITE);
+		lblBienvenido.setForeground(Color.BLUE);
+		lblBienvenido.setFont(new Font("Bell MT", Font.ITALIC, 60));
+		lblBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBienvenido.setBounds(115, 110, 545, 205);
+		add(lblBienvenido);
+
 		addMouseListener(new MouseListener() {
 
 			@Override
@@ -66,8 +60,9 @@ public class PanelBienvenida extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				long tiempoDeActivacion = System.currentTimeMillis() + 350;
-	               while (System.currentTimeMillis() < tiempoDeActivacion) {}
-	               vp.cambiarPanel(1);//hacer algo tras 3000 milisegundos
+				while (System.currentTimeMillis() < tiempoDeActivacion) {
+				}
+				vp.cambiarPanel(1);// hacer algo tras 3000 milisegundos
 
 			}
 		});

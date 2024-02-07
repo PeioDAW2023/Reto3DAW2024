@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 import paneles.PanelBienvenida;
+import paneles.PanelCine;
 import paneles.PanelLogin;
 import paneles.PanelPeliculas;
 import paneles.PanelRegistro;
@@ -18,10 +19,9 @@ public class VistaPrincipal extends JFrame{
 		setSize(800, 600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-		setTitle("Cine Elorrieta");
+		setTitle("Cines Seventh");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VistaPrincipal.class.getResource("/multimedia/seventh.jpg")));
-		
-	}
+		}
 
 	public void cambiarPanel(int IDCambiarPanel) {
 
@@ -36,9 +36,12 @@ public class VistaPrincipal extends JFrame{
 			setContentPane(new PanelRegistro(this));
 			break;
 		case 3:
-			setContentPane(new PanelPeliculas(this));
+			setContentPane(new PanelCine(this));
 			break;
 		case 4:
+			setContentPane(new PanelPeliculas(this));
+			break;
+		case 5:
 			setContentPane(new PanelResumen(this));
 			break;
 		}
