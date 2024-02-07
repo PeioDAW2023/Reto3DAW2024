@@ -20,6 +20,8 @@ public class PanelCine extends JPanel {
 		setLayout(null);
 	}
 
+	
+	
 	public PanelCine(VistaPrincipal vp) {
 		setSize(vp.getSize());
 		vp.setIconImage(
@@ -50,7 +52,7 @@ public class PanelCine extends JPanel {
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource()==comBoxCines) {
-		            //String seleccionado=(String)comBoxCines.getSelectedItem();
+		           //String seleccionado=(String)comBoxCines.getSelectedItem();
 		        }
 				vp.cambiarPanel(4);
 			}

@@ -5,9 +5,12 @@ import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
 import vista.VistaPrincipal;
 
 public class PanelBienvenida extends JPanel{
@@ -24,7 +27,11 @@ public class PanelBienvenida extends JPanel{
 		setBackground(Color.GRAY);
 		
      
-        
+        JLabel lblFondoCine = new JLabel("");
+        lblFondoCine.setBounds(0, 0, 800, 600);
+        //lblFondoCine.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/cine.jpg")));
+       
+        add(lblFondoCine);
         
         JLabel lblBienvenido = new JLabel("CINES SEVENTH");
         lblBienvenido.setBackground(Color.WHITE);

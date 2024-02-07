@@ -135,11 +135,19 @@ public class PanelRegistro extends JPanel {
 	}
 
 	private void registro(VistaPrincipal vp) {
-		if (txtContraseña.getText().equals(txtConfirmarContra.getText())) {
-			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);
+		
+		if (txtUsuario.getText().isEmpty() | txtContraseña.getText().isEmpty() | txtConfirmarContra.getText().isEmpty() ) {
+			JOptionPane.showMessageDialog(null, "Todos los datos son obligatorios", "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
-		JOptionPane.showMessageDialog(null, "Registro completado, Inicia sesion");
-		vp.cambiarPanel(1);
+		
+		else if (txtContraseña.getText().equals(txtConfirmarContra.getText())) {
+			JOptionPane.showMessageDialog(null, "Se ha guardado , Inicia sesion");
+			vp.cambiarPanel(1);
+		} else {
+			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+		}
+
 	}
 
 }
