@@ -1,7 +1,6 @@
 package paneles;
 
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -33,8 +32,6 @@ public class PanelRegistro extends JPanel {
 	public PanelRegistro(VistaPrincipal vp) {
 
 		setSize(vp.getSize());
-		vp.setIconImage(
-				Toolkit.getDefaultToolkit().getImage(VistaPrincipal.class.getResource("/multimedia/login_icon.png")));
 		setLayout(null);
 
 		JLabel lblCineElorrieta = new JLabel("Crear Cuenta");
