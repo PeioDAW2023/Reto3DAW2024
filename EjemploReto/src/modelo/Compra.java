@@ -1,15 +1,22 @@
 package modelo;
 
-import java.util.Objects;
-
 public class Compra {
-	
+
 	private int codCompra, cantPel, descuento;
 	private Double precioTotal, precioFinal;
-	
+
 	private Cliente cliente;
 
-	
+	public Compra(int codCompra, int cantPel, int descuento, Double precioTotal, Double precioFinal, Cliente cliente) {
+		super();
+		this.codCompra = codCompra;
+		this.cantPel = cantPel;
+		this.descuento = descuento;
+		this.precioTotal = precioTotal;
+		this.precioFinal = precioFinal;
+		this.cliente = cliente;
+	}
+
 	public int getCodCompra() {
 		return codCompra;
 	}
@@ -59,29 +66,9 @@ public class Compra {
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(cantPel, codCompra, descuento, precioFinal, precioTotal, cliente);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Compra other = (Compra) obj;
-		return cantPel == other.cantPel && codCompra == other.codCompra && descuento == other.descuento
-				&& Objects.equals(precioFinal, other.precioFinal) && Objects.equals(precioTotal, other.precioTotal)
-				&& Objects.equals(cliente, other.cliente);
-	}
-
-	@Override
 	public String toString() {
 		return "Compra [CodCompra=" + codCompra + ", CantPel=" + cantPel + ", Descuento=" + descuento + ", PrecioTotal="
 				+ precioTotal + ", PrecioFinal=" + precioFinal + ", cliente=" + cliente + "]";
 	}
-	
-	
+
 }

@@ -1,12 +1,17 @@
 package modelo;
 
-import java.util.Objects;
-
 public class Cliente {
 
 	private String dni, nomCliente, apeCliente, sexo, contrasena;
 
-	
+	public Cliente(String dni, String nomCliente, String apeCliente, String sexo, String contrasena) {
+		super();
+		this.dni = dni;
+		this.nomCliente = nomCliente;
+		this.apeCliente = apeCliente;
+		this.sexo = sexo;
+		this.contrasena = contrasena;
+	}
 
 	public String getDni() {
 		return dni;
@@ -49,28 +54,9 @@ public class Cliente {
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(apeCliente, contrasena, dni, nomCliente, sexo);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		return Objects.equals(apeCliente, other.apeCliente) && Objects.equals(contrasena, other.contrasena)
-				&& Objects.equals(dni, other.dni) && Objects.equals(nomCliente, other.nomCliente)
-				&& Objects.equals(sexo, other.sexo);
-	}
-
-	@Override
 	public String toString() {
 		return "Cliente [DNI=" + dni + ", NomCliente=" + nomCliente + ", ApeCliente=" + apeCliente + ", Sexo=" + sexo
 				+ ", Contrasena=" + contrasena + "]";
 	}
-	
+
 }

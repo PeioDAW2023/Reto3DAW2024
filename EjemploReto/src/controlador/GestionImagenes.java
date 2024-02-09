@@ -8,13 +8,13 @@ import javax.swing.JLabel;
 
 import vista.VistaPrincipal;
 
-public class GestorDatos extends JFrame {
+public class GestionImagenes extends JFrame {
 	private static final long serialVersionUID = 1L;
 
-	public GestorDatos(VistaPrincipal vp) {
+	public GestionImagenes(VistaPrincipal vp) {
 	}
 
-	public GestorDatos() {
+	public GestionImagenes() {
 	}
 
 	public void ajustarImagen(JLabel peli, String ruta) {

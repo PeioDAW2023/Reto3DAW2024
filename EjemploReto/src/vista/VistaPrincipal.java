@@ -4,13 +4,9 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import controlador.GestorDatos;
-import paneles.PanelBienvenida;
-import paneles.PanelCine;
-import paneles.PanelLogin;
-import paneles.PanelPeliculas;
-import paneles.PanelRegistro;
-import paneles.PanelResumen;
+import controlador.GestionBD;
+import controlador.GestionImagenes;
+import paneles.*;
 
 public class VistaPrincipal extends JFrame{
 
@@ -24,7 +20,8 @@ public class VistaPrincipal extends JFrame{
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VistaPrincipal.class.getResource("/multimedia/seventh.jpg")));
 		}
 	
-	GestorDatos img = new GestorDatos();
+	GestionImagenes img = new GestionImagenes();
+	GestionBD gestion = new GestionBD();
 
 	
 	public void cambiarPanel(int IDCambiarPanel) {
@@ -43,16 +40,21 @@ public class VistaPrincipal extends JFrame{
 			setContentPane(new PanelCine(this));
 			break;
 		case 4:
-			setContentPane(new PanelPeliculas(this, img));
+			setContentPane(new PruebaDatos(this, gestion, img));
 			break;
 		case 5:
 			setContentPane(new PanelResumen(this, img));
 			break;
+		case 6:
+			setContentPane(new PanelPruebas(this, gestion));
+			break;
+		case 7:
+			
 		}
 	}
 
 	public void lanzarVentana() {
-		this.cambiarPanel(0);
+		this.cambiarPanel(4);
 		this.setVisible(true);
 	}
 
