@@ -5,7 +5,7 @@ public class Pelicula {
 	private String codPelicula, nomPelicula, dcp, genero;
 	private int duracion;
 
-	public Pelicula(String codPelicula, String nomPelicula, int duracion, String genero, String dcp) {
+	public Pelicula(String codPelicula, String nomPelicula, int duracion, String dcp, String genero) {
 		super();
 		this.codPelicula = codPelicula;
 		this.nomPelicula = nomPelicula;

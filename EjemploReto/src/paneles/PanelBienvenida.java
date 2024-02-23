@@ -2,9 +2,11 @@ package paneles;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -20,20 +22,24 @@ public class PanelBienvenida extends JPanel {
 		setSize(vp.getSize());
 		setLayout(null);
 
-		setBackground(Color.GRAY);
-
 		JLabel lblFondoCine = new JLabel("");
 		lblFondoCine.setBounds(0, 0, 800, 600);
 
 		add(lblFondoCine);
 
 		JLabel lblBienvenido = new JLabel("CINES SEVENTH");
-		lblBienvenido.setBackground(Color.WHITE);
-		lblBienvenido.setForeground(Color.BLUE);
+		lblBienvenido.setForeground(Color.WHITE);
 		lblBienvenido.setFont(new Font("Bell MT", Font.ITALIC, 60));
 		lblBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBienvenido.setBounds(115, 110, 545, 205);
+		lblBienvenido.setBounds(115, 150, 545, 205);
 		add(lblBienvenido);
+		
+		ImageIcon foto = new ImageIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/fotoBienvenida.jpg")).getImage()
+				.getScaledInstance(vp.getWidth(), vp.getHeight(), Image.SCALE_DEFAULT));
+		
+		JLabel fondoCine = new JLabel(foto);
+		fondoCine.setBounds(0, 0, vp.getWidth(), vp.getHeight());
+		add(fondoCine);
 
 		addMouseListener(new MouseListener() {
 

@@ -6,7 +6,12 @@ import javax.swing.JFrame;
 
 import controlador.GestionBD;
 import controlador.GestionImagenes;
-import paneles.*;
+import paneles.PanelBienvenida;
+import paneles.PanelCine;
+import paneles.PanelLogin;
+import paneles.PanelPeliculas;
+import paneles.PanelRegistro;
+import paneles.PanelResumen;
 
 public class VistaPrincipal extends JFrame{
 
@@ -31,30 +36,25 @@ public class VistaPrincipal extends JFrame{
 			setContentPane(new PanelBienvenida(this));
 			break;
 		case 1:
-			setContentPane(new PanelLogin(this));
+			setContentPane(new PanelLogin(this, gestion));
 			break;
 		case 2:
-			setContentPane(new PanelRegistro(this));
+			setContentPane(new PanelRegistro(this, gestion));
 			break;
 		case 3:
-			setContentPane(new PanelCine(this));
+			setContentPane(new PanelCine(this, gestion));
 			break;
 		case 4:
-			setContentPane(new PruebaDatos(this, gestion, img));
+			setContentPane(new PanelPeliculas(this, gestion, img));
 			break;
 		case 5:
-			setContentPane(new PanelResumen(this, img));
-			break;
-		case 6:
-			setContentPane(new PanelPruebas(this, gestion));
-			break;
-		case 7:
-			
+			setContentPane(new PanelResumen(this, img, gestion));
+			break;		
 		}
 	}
 
 	public void lanzarVentana() {
-		this.cambiarPanel(4);
+		this.cambiarPanel(3);
 		this.setVisible(true);
 	}
 

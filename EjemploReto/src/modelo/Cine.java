@@ -4,8 +4,7 @@ public class Cine {
 
 	private String codCine, direccion, nomCine;
 
-	public Cine(String codCine, String direccion, String nomCine) {
-		super();
+	public Cine(String codCine, String nomCine, String direccion) {
 		this.codCine = codCine;
 		this.direccion = direccion;
 		this.nomCine = nomCine;

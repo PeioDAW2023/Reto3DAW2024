@@ -3,147 +3,167 @@ package paneles;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import controlador.GestionBD;
 import vista.VistaPrincipal;
 
 public class PanelRegistro extends JPanel {
-
 	private static final long serialVersionUID = 1L;
-
+	
+	// Declaracion de campos y Arrays
+	
+	private JTextField txtNombre; 
+	private JTextField txtDNI; 
+	private JTextField txtApellido; 
+	private JTextField pwdContraseña; 
+	private JTextField pwdConfirmarContraseña;	
+	private JLabel lblTituloRegistro; 
+	private JLabel lblNombre;
+	private JLabel lblDNI; 
+	private JLabel lblApellido; 
+	private JLabel lblContraseña; 
+	private JLabel lblConfirmarContraseña; 
+	private JLabel lblSexo;
+	private JLabel lblIcono1; 
+	private JLabel lblIcono2;
+	private JButton btnGuardarRegistro; 
+	private JButton btnAtras;
+	private JComboBox<String> comboBoxSexo;
+	
+	private String[] sexos = { "H", "M" };
+	
+	// Constructor del panel
 	public PanelRegistro() {
 	}
 
-	private JTextField txtUsuario;
-	private JTextField txtContraseña, txtConfirmarContra;
-	private JButton btnContinuar;
+	public PanelRegistro(VistaPrincipal vp, GestionBD gestion) {
 
-	public PanelRegistro(VistaPrincipal vp) {
-
+		// Adapta el panel al frame
 		setSize(vp.getSize());
 		setLayout(null);
 
-		JLabel lblCineElorrieta = new JLabel("Crear Cuenta");
-		lblCineElorrieta.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCineElorrieta.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 45));
-		lblCineElorrieta.setBounds(10, 122, 780, 73);
-		add(lblCineElorrieta);
+		// AGREGACION DE CAMPOS
+		// Labels y TextFields
+		lblTituloRegistro = new JLabel("Crear Cuenta");
+		lblTituloRegistro.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTituloRegistro.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 45));
+		lblTituloRegistro.setBounds(10, 10, 780, 73);
+		add(lblTituloRegistro);
 
-		JLabel lblUsuario = new JLabel("Nombre:");
-		lblUsuario.setFont(new Font("Calisto MT", Font.PLAIN, 17));
-		lblUsuario.setBounds(220, 220, 175, 30);
-		add(lblUsuario);
+		lblNombre = new JLabel("Nombre:");
+		lblNombre.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblNombre.setBounds(220, 164, 175, 30);
+		add(lblNombre);
 
-		txtUsuario = new JTextField();
-		txtUsuario.setBounds(395, 220, 175, 30);
-		add(txtUsuario);
-		txtUsuario.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(395, 167, 175, 30);
+		add(txtNombre);
+		txtNombre.setColumns(10);
 
-		JLabel lblcontraseña = new JLabel("Contraseña:");
-		lblcontraseña.setFont(new Font("Calisto MT", Font.PLAIN, 17));
-		lblcontraseña.setBounds(220, 275, 175, 30);
-		add(lblcontraseña);
+		lblDNI = new JLabel("DNI:");
+		lblDNI.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblDNI.setBounds(220, 110, 175, 30);
+		add(lblDNI);
 
-		txtContraseña = new JPasswordField();
-		txtContraseña.addKeyListener(new KeyListener() {
-			public void keyTyped(KeyEvent e) {
-			}
+		txtDNI = new JTextField();
+		txtDNI.setColumns(10);
+		txtDNI.setBounds(395, 113, 175, 30);
+		add(txtDNI);
 
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnContinuar.doClick();
-				}
-			}
+		lblApellido = new JLabel("Apellido:");
+		lblApellido.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblApellido.setBounds(220, 215, 175, 30);
+		add(lblApellido);
 
-			public void keyReleased(KeyEvent e) {
-			}
-		});
+		txtApellido = new JTextField();
+		txtApellido.setColumns(10);
+		txtApellido.setBounds(395, 223, 175, 30);
+		add(txtApellido);
 
-		txtContraseña.setColumns(10);
-		txtContraseña.setBounds(395, 275, 175, 30);
-		add(txtContraseña);
+		lblSexo = new JLabel("Sexo:");
+		lblSexo.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblSexo.setBounds(220, 273, 175, 30);
+		add(lblSexo);
 
-		JLabel lblConfirmaContra = new JLabel("Confirmar contraseña:");
-		lblConfirmaContra.setFont(new Font("Calisto MT", Font.PLAIN, 17));
-		lblConfirmaContra.setBounds(220, 325, 175, 30);
-		add(lblConfirmaContra);
+		lblContraseña = new JLabel("Contraseña:");
+		lblContraseña.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblContraseña.setBounds(220, 351, 175, 30);
+		add(lblContraseña);
 
-		txtConfirmarContra = new JPasswordField();
-		txtConfirmarContra.addKeyListener(new KeyListener() {
-			public void keyTyped(KeyEvent e) {
-			}
+		pwdContraseña = new JPasswordField();
+		pwdContraseña.setColumns(10);
+		pwdContraseña.setBounds(395, 354, 175, 30);
+		add(pwdContraseña);
 
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnContinuar.doClick();
-				}
-			}
+		lblConfirmarContraseña = new JLabel("Confirmar contraseña:");
+		lblConfirmarContraseña.setFont(new Font("Calisto MT", Font.PLAIN, 17));
+		lblConfirmarContraseña.setBounds(220, 402, 175, 30);
+		add(lblConfirmarContraseña);
 
-			public void keyReleased(KeyEvent e) {
-			}
-		});
+		pwdConfirmarContraseña = new JPasswordField();
+		pwdConfirmarContraseña.setColumns(10);
+		pwdConfirmarContraseña.setBounds(395, 402, 175, 30);
+		add(pwdConfirmarContraseña);
 
-		txtConfirmarContra.setColumns(10);
-		txtConfirmarContra.setBounds(395, 325, 175, 30);
-		add(txtConfirmarContra);
+		// Labels con Imagenes
 
-		JButton btnRegistrarse = new JButton("Guardar");
-		btnRegistrarse.setBackground(UIManager.getColor("Button.background"));
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				registro(vp);
-			}
-
-		});
-		btnRegistrarse.setBounds(490, 410, 80, 25);
-		add(btnRegistrarse);
-
-		JButton btnAtras = new JButton("Atras");
-		btnAtras.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				vp.cambiarPanel(1);
-			}
-
-		});
-		btnAtras.setBounds(395, 410, 65, 25);
-		add(btnAtras);
-
-		JLabel lblIcono1 = new JLabel();
+		lblIcono1 = new JLabel();
 		lblIcono1.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rolloCinePelis1.png")));
 		lblIcono1.setBounds(0, 0, 145, 600);
 		add(lblIcono1);
 
-		JLabel lblIcono2 = new JLabel();
+		lblIcono2 = new JLabel();
 		lblIcono2.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/multimedia/rolloCinePelis2.png")));
 		lblIcono2.setBounds(647, 0, 175, 600);
 		add(lblIcono2);
 
-	}
+		// ComboBox
 
-	private void registro(VistaPrincipal vp) {
-		
-		if (txtUsuario.getText().isEmpty() | txtContraseña.getText().isEmpty() | txtConfirmarContra.getText().isEmpty() ) {
-			JOptionPane.showMessageDialog(null, "Todos los datos son obligatorios", "ERROR", JOptionPane.ERROR_MESSAGE);
-		}
-		
-		else if (txtContraseña.getText().equals(txtConfirmarContra.getText())) {
-			JOptionPane.showMessageDialog(null, "Se ha guardado , Inicia sesion");
-			vp.cambiarPanel(1);
-		} else {
-			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);
+		comboBoxSexo = new JComboBox<String>(sexos);
+		comboBoxSexo.setBounds(395, 280, 43, 21);
+		add(comboBoxSexo);
 
-		}
+		// Botones
+
+		btnGuardarRegistro = new JButton("Guardar");
+		btnGuardarRegistro.setBackground(UIManager.getColor("Button.background"));
+		btnGuardarRegistro.setBounds(490, 486, 80, 25);
+		add(btnGuardarRegistro);
+
+		btnAtras = new JButton("Atras");
+		btnAtras.setBounds(395, 486, 65, 25);
+		add(btnAtras);
+
+		// ACCIONES DE BOTONES
+
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vp.cambiarPanel(1); // Cambia al Panel de Login
+			}
+
+		});
+
+		btnGuardarRegistro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Llama al método para validar los campos rellenados antes de agregralo a la
+				// base de datos
+				gestion.validarRegistro(vp, txtDNI.getText(), txtNombre.getText(), txtApellido.getText(),
+						comboBoxSexo.getSelectedItem().toString(), pwdContraseña.getText(),
+						pwdConfirmarContraseña.getText());
+
+			}
+
+		});
 
 	}
 

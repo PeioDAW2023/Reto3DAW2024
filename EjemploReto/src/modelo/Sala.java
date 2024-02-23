@@ -5,7 +5,6 @@ public class Sala {
 	private String codSala, nomSala, codCine;
 
 	public Sala(String codSala, String nomSala, String codCine) {
-		super();
 		this.codSala = codSala;
 		this.nomSala = nomSala;
 		this.codCine = codCine;

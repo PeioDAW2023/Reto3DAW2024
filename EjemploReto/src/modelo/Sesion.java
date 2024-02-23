@@ -2,10 +2,9 @@ package modelo;
 
 public class Sesion {
 
-	private int codSesion;
-	private String codSala, codPelicula, fecha, hora, precio;
+	private String codSesion, codSala, codPelicula, fecha, hora, precio;
 
-	public Sesion(int codSesion, String codSala, String codPelicula, String fecha, String hora, String precio) {
+	public Sesion(String codSesion, String codSala, String codPelicula, String fecha, String hora, String precio) {
 		super();
 		this.codSesion = codSesion;
 		this.codSala = codSala;
@@ -15,11 +14,11 @@ public class Sesion {
 		this.precio = precio;
 	}
 
-	public int getCodSesion() {
+	public String getCodSesion() {
 		return codSesion;
 	}
 
-	public void setCodSesion(int codSesion) {
+	public void setCodSesion(String codSesion) {
 		this.codSesion = codSesion;
 	}
 

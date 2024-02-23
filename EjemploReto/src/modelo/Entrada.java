@@ -3,17 +3,15 @@ package modelo;
 public class Entrada {
 
 	private String codEntrada;
+	private String codSesion;
 	private int cantidad;
-
-	private Compra compra;
-	private Sesion sesion;
-
-	public Entrada(String codEntrada, int cantidad, Compra compra, Sesion sesion) {
-		super();
+	private int codCompra;
+	
+	public Entrada(String codEntrada, int codCompra, String codSesion, int cantidad) {
 		this.codEntrada = codEntrada;
 		this.cantidad = cantidad;
-		this.compra = compra;
-		this.sesion = sesion;
+		this.codCompra = codCompra;
+		this.codSesion = codSesion;
 	}
 
 	public String getCodEntrada() {
@@ -32,26 +30,26 @@ public class Entrada {
 		this.cantidad = cantidad;
 	}
 
-	public Compra getCompra() {
-		return compra;
+	public int getCodCompra() {
+		return codCompra;
 	}
 
-	public void setCompra(Compra compra) {
-		this.compra = compra;
+	public void setCompra(int codCompra) {
+		this.codCompra = codCompra;
 	}
 
-	public Sesion getSesion() {
-		return sesion;
+	public String getSesion() {
+		return codSesion;
 	}
 
-	public void setSesion(Sesion sesion) {
-		this.sesion = sesion;
+	public void setSesion(String codSesion) {
+		this.codSesion = codSesion;
 	}
 
 	@Override
 	public String toString() {
-		return "Entrada [codEntrada=" + codEntrada + ", cantidad=" + cantidad + ", compra=" + compra + ", sesion="
-				+ sesion + "]";
+		return "Entrada [codEntrada=" + codEntrada + ", cantidad=" + cantidad + ", compra=" + codCompra + ", sesion="
+				+ codSesion + "]";
 	}
 
 }
